@@ -102,7 +102,7 @@ p{
     margin-top: 0;
     font-size: 80px;
     color: #eee;
-    text-shadow: 0 0 3px #000, 3px 5px 5px #000;
+    /* text-shadow: 0 0 3px #000, 3px 5px 5px #000; */
 }
 
 .roadmap-section {
