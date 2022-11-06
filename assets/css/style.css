@@ -129,6 +129,18 @@ footer{
     width: 450px; height: 610px;z-index: 2; border-radius: 40px;overflow: hidden;border: 10px solid #216C7A
 }
 
+.community{
+    margin: -150px 0
+}
+
+.community-div{
+    margin: 50px auto 0 auto; width: 80%;
+}
+
+.community-para{
+    margin: 0 auto; width: 80%
+}
+
 @media only screen and (max-width: 2100px) {
 
     .roadmap-section {
@@ -137,6 +149,10 @@ footer{
 
     footer{
         margin-top: 520px !important;
+    }
+
+    .community{
+        margin: -150px 0 -500px 0;
     }
 }
 @media only screen and (max-width: 1500px) {
@@ -177,6 +193,10 @@ footer{
         display: none;
     }
 
+    .navbar-brand{
+        font-size: 18px;
+    }
+
     .roadmap-head{
         top: 20px !important
     }
@@ -212,6 +232,10 @@ footer{
         margin: 0 auto;
     }
 
+    .banner{
+        bottom: 50px;
+    }
+
     .avenue{
         height: 100%;
     }
@@ -223,6 +247,14 @@ footer{
 
     .sup-img{
         width: 800px !important;
+    }
+
+    .community{
+        margin: -150px 0 -100px 0
+    }
+
+    .community-div, .community-para{
+        width: 100%;
     }
 
 }
