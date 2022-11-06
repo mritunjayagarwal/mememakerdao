@@ -149,6 +149,10 @@ footer{
         margin-top: 150px !important;
     }
 
+    .heading{
+        font-size: 70px;
+    }
+
     .banner{
         bottom: -200px;
     }
