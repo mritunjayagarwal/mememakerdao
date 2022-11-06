@@ -142,7 +142,12 @@ footer{
 }
 
 .dropdown-item{
-    color: #000;
+    color: #fff !important;
+    font-weight: 500;
+}
+.dropdown-item:hover{
+    color: #000 !important;
+    background: #00E8AF;
 }
 
 @media only screen and (max-width: 2100px) {
