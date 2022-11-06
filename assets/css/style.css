@@ -141,6 +141,10 @@ footer{
     margin: 0 auto; width: 80%
 }
 
+.dropdown-item{
+    color: #000;
+}
+
 @media only screen and (max-width: 2100px) {
 
     .roadmap-section {
