@@ -150,6 +150,10 @@ footer{
     background: #00E8AF;
 }
 
+.commu-main{
+    border: 10px solid #195D4D; padding: 100px 80px; border-radius: 80px
+}
+
 @media only screen and (max-width: 2100px) {
 
     .roadmap-section {
@@ -268,6 +272,14 @@ footer{
 
     .community-div, .community-para{
         width: 100%;
+    }
+
+    .community-head{
+        font-size: 30px
+    }
+
+    .commu-main{
+        padding: 50px 10px;
     }
 
 }
