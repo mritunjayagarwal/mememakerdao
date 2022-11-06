@@ -172,6 +172,10 @@ footer{
     .banner{
         bottom: -200px;
     }
+
+    .community{
+        margin: -150px 0;
+    }
 }
 @media only screen and (max-width: 1200px) {
 
