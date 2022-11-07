@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/1.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img/logo.png" />
     <title>Meme Makers DAO</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -282,6 +282,17 @@
         </div>
     </section>
 
+
+    <div class="countdown d-flex align-items-center justify-content-center" data-date="7-11-2022" data-time="21:20">
+        <h1 class = "text-white text-center" style = "margin-bottom: 150px; color: green">LAUNCHING IN</h1>
+        <div class = "countdown">
+            <div class="day"><span class="num"></span><span class="word"></span></div>
+            <div class="hour"><span class="num"></span><span class="word"></span></div>
+            <div class="min"><span class="num"></span><span class="word"></span></div>
+            <div class="sec"><span class="num"></span><span class="word"></span></div>
+        </div>
+    </div>
+
     <footer style="padding: 30px 0">
         <div class="container">
             <div class="row">
@@ -321,7 +332,9 @@
                     <a href="https://twitter.com/MemeMaker_DAO?t=qzQnm1fzFMhYdNtCB5ES5Q&s=08"><i
                             class="fa fa-twitter mx-2" style="font-size: 25px; color: #fff"></i></a>
                     <a href=""><i class="fa fa-reddit mx-2" style="font-size: 25px; color: #fff"></i></a>
-                    <a href="https://medium.com/@mememakerdao/meme-maker-dao-building-for-the-betterment-of-crypto-industry-d889741a33ff"><i class="fa fa-medium mx-2" style="font-size: 25px; color: #fff"></i></a>
+                    <a
+                        href="https://medium.com/@mememakerdao/meme-maker-dao-building-for-the-betterment-of-crypto-industry-d889741a33ff"><i
+                            class="fa fa-medium mx-2" style="font-size: 25px; color: #fff"></i></a>
                 </div>
             </div>
         </div>
@@ -336,6 +349,76 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+
+    <script>
+        const $ = elem => document.querySelector(elem);
+
+        const countdown = function (_config) {
+            const tarDate = $(_config.target).getAttribute('data-date').split('-');
+            const day = parseInt(tarDate[0]);
+            const month = parseInt(tarDate[1]);
+            const year = parseInt(tarDate[2]);
+            let tarTime = $(_config.target).getAttribute('data-time');
+            let tarhour, tarmin;
+
+            if (tarTime != null) {
+                tarTime = tarTime.split(':');
+                tarhour = parseInt(tarTime[0]);
+                tarmin = parseInt(tarTime[1]);
+            }
+
+            let dateNow = new Date();
+
+            // Set the date we're counting down to
+            const countDownDate = new Date(year, month - 1, day, tarhour, tarmin, 0, 0).getTime();
+
+            $(_config.target + ' .day .word').innerHTML = _config.dayWord;
+            $(_config.target + ' .hour .word').innerHTML = _config.hourWord;
+            $(_config.target + ' .min .word').innerHTML = _config.minWord;
+            $(_config.target + ' .sec .word').innerHTML = _config.secWord;
+
+            const updateTime = () => {
+                // Get todays date and time
+                const now = new Date().getTime();
+
+                // Find the distance between now an the count down date
+                const distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    $(".countdown").style.visibility = "hidden";
+                    $(".countdown").style.position = "unset";
+                    $(".countdown").style.background = "transparent";
+                    
+                } else {
+                    requestAnimationFrame(updateTime);
+
+                    $(_config.target + ' .day .num').innerHTML = addZero(days);
+                    $(_config.target + ' .hour .num').innerHTML = addZero(hours);
+                    $(_config.target + ' .min .num').innerHTML = addZero(minutes);
+                    $(_config.target + ' .sec .num').innerHTML = addZero(seconds);
+                }
+            }
+
+            updateTime();
+        }
+
+        const addZero = (x) => (x < 10 && x >= 0) ? "0" + x : x;
+
+        const mylittlething_countdown = new countdown({
+            target: '.countdown',
+            dayWord: ' days',
+            hourWord: ' hours',
+            minWord: ' mins',
+            secWord: ' secs'
+        });
+    </script>
 </body>
 
 </html>
