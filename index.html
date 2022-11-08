@@ -354,7 +354,7 @@
 
     <script>
         const $ = elem => document.querySelector(elem);
-        $(".hide-con").style.display = "none";
+        $(".hide-con").style.visibility = "hidden";
         const countdown = function (_config) {
             const tarDate = $(_config.target).getAttribute('data-date').split('-');
             const day = parseInt(tarDate[0]);
@@ -394,7 +394,7 @@
 
                 // If the count down is over, write some text 
                 if (distance < 0) {
-                    $(".hide-con").style.display = "block";
+                    $(".hide-con").style.visibility = "visible";
                     $(".countdown").style.visibility = "hidden";
                     $(".countdown").style.position = "unset";
                     $(".countdown").style.background = "transparent";
